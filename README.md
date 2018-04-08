@@ -5,7 +5,9 @@ In order to access web resources via https. This is needed if the included keyst
 
 Adding the new certificate to your JRE does not help, as Payara/Glassfish uses it's own keystore.
 
-This keystore is located here: /payara5/glassfish/domains/production/config/cacerts.jks
+This keystore is located here: /payara5/glassfish/domains/production/config/cacerts.jks (assuming you are using the production domain)
+
+You might wish to do the same on any other domains you use, and on development machines.
 
 In order to add a certificate simply
 1. Download the certificate.
