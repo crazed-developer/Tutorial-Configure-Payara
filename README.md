@@ -6,7 +6,7 @@
 2. Unzip the server
 3. Move the unzipped server to: /opt/
 4. Add user "payara": sudo adduser payara
-5. Change owner of payara folder: sudo chown -R payara:payara payara5-181 (Assuming payara5-181 is the folder located in: /opt/)
+5. Change owner(and group) of payara folder: sudo chown -R payara:payara payara5-181 (Assuming payara5-181 is the folder located in: /opt/)
 7. Be sure to cd into /opt/
 6. Create a symlink to the installation folder: sudo ln -s /opt/payara5-181 payara5
 
