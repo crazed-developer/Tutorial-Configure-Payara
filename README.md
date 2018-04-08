@@ -1,5 +1,22 @@
 # Configure-Payara
 
+# Physically installing the Payara/Glassfish server
+
+1. Download the server
+2. Unzip the server
+3. Move the unzipped server to: /opt/
+4. Add user "payara": sudo adduser payara
+5. Change owner of payara folder: sudo chown -R payara:payara payara5-181 (Assuming payara5-181 is the folder located in: /opt/)
+7. Be sure to cd into /opt/
+6. Create a symlink to the installation folder: sudo ln -s /opt/payara5-181 payara5
+
+Creating the symlink is a very nice way of configureing the server setup. Now your live server is on the /opt/payara5 folder.
+
+When you upgrade to payara 182, you simply unzip it, change owner as described (user is alreadey created). And then make the symlink point at the new installation. Now your systemd configuration works with your new server, without having to edit the configuration.
+
+Should there be broblems, and you need to revert to the previous version. Just remake the symlink to the server last known good!
+
+
 # Systemd, it's really nice to use!!
 Setup the server as a systemd service.
 
@@ -9,7 +26,7 @@ Fire off these commands on ubuntu server 17.10 -->
 3. Paste in the text below, and save (Be sure to observe, and edit paths).
 
 ###Copy below this line<br/>
-[Unit]
+[Unit]<br/>
 Description = Payara Server v5
 After = syslog.target network.target
 
