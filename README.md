@@ -8,7 +8,7 @@ Fire off these commands on ubuntu server 17.10 -->
 2. sudo nano /etc/systemd/system/payara.service
 3. Paste in the text below, and save (Be sure to observe, and edit paths).
 
-####Copy below this line
+###Copy below this line<br/>
 [Unit]
 Description = Payara Server v5
 After = syslog.target network.target
@@ -22,7 +22,7 @@ Type = forking
 
 [Install]
 WantedBy = multi-user.target
-####Copy above this line
+<br/>###Copy above this line
 
 4. execute command: sudo systemctl enable payara (Enables payara server, and starts it on reboots etc.)
 
