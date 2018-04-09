@@ -14,7 +14,7 @@ Creating the symlink is a very nice way of configureing the server setup. Now yo
 
 When you upgrade to payara 182, you simply unzip it, change owner as described (user is alreadey created). And then make the symlink point at the new installation. Now your systemd configuration works with your new server, without having to edit the configuration.
 
-Should there be broblems, and you need to revert to the previous version. Just remake the symlink to the server last known good!
+Should there be problems, and you need to revert to the previous version. Just remake the symlink to the server last known good!
 
 
 # Systemd, it's really nice to use!!
