@@ -27,19 +27,19 @@ Fire off these commands on ubuntu server 17.10 -->
 
 ###Copy below this line<br/>
 [Unit]<br/>
-Description = Payara Server v5
+Description = Payara Server v5<br/>
 After = syslog.target network.target
 
 [Service]<br/>
-User=payara
-ExecStart = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar start-domain production
-ExecStop = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar stop-domain production
-ExecReload = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar restart-domain production
-Type = forking
+User=payara<br/>
+ExecStart = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar start-domain production<br/>
+ExecStop = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar stop-domain production<br/>
+ExecReload = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar restart-domain production<br/>
+Type = forking<br/>
 
 [Install]<br/>
-WantedBy = multi-user.target
-<br/>###Copy above this line
+WantedBy = multi-user.target<br/>
+<br/>###Copy above this line<br/>
 
 4. execute command: sudo systemctl enable payara (Enables payara server, and starts it on reboots etc.)
 
