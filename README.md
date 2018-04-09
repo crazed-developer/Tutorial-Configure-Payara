@@ -36,6 +36,7 @@ ExecStart = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.j
 ExecStop = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar stop-domain production<br/>
 ExecReload = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar restart-domain production<br/>
 Type = forking<br/>
+PIDFile=payara5/glassfish/domains/production/config/pid<br/>
 
 [Install]<br/>
 WantedBy = multi-user.target<br/>
