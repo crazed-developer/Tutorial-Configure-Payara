@@ -20,29 +20,8 @@ Should there be problems, and you need to revert to the previous version. Just r
 # Systemd, it's really nice to use!!
 Setup the server as a systemd service.
 
-Fire off these commands on ubuntu server 17.10 -->
-1. sudo touch /etc/systemd/system/payara.service
-2. sudo nano /etc/systemd/system/payara.service
-3. Paste in the text below, and save (Be sure to observe, and edit paths).
-
-###Copy below this line<br/>
-[Unit]<br/>
-Description = Payara Server v5<br/>
-After = syslog.target network.target
-
-[Service]<br/>
-User=payara<br/>
-ExecStart = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar start-domain production<br/>
-ExecStop = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar stop-domain production<br/>
-ExecReload = /usr/bin/java -jar /opt/payara5/glassfish/lib/client/appserver-cli.jar restart-domain production<br/>
-Type = forking<br/>
-PIDFile=payara5/glassfish/domains/production/config/pid<br/>
-
-[Install]<br/>
-WantedBy = multi-user.target<br/>
-<br/>###Copy above this line<br/>
-
-4. execute command: sudo systemctl enable payara (Enables payara server, and starts it on reboots etc.)
+1. Copy the file: payara.service in this repo to this location: /etc/systemd/system
+2. Execute command: sudo systemctl enable payara (Enables payara server, and starts it on reboots etc.)
 
 
 # You might need to add a certificate to your keystore
