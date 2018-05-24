@@ -24,7 +24,7 @@ Setup the server as a systemd service.
 2. Execute command: sudo systemctl enable payara (Enables payara server, and starts it on reboots etc.)
 
 
-# You might need to add a certificate to your keystore
+# You might need to add a certificate to your Payara keystore
 In order to access web resources via https. This is needed if the included keystore does not include a root certificate to support the certificate of the website/webservice you wish to access.
 
 Adding the new certificate to your JRE does not help, as Payara/Glassfish uses it's own keystore.
@@ -40,3 +40,12 @@ In order to add a certificate simply
 4. When asked type yes + enter
 5. done
 6. restart payara / glassfish
+
+# You might also need to add certificates to the JRE
+For the same reasons as above, it might be nesassary to add certificates to the JRE too. If you need to run processes on the server outside the Payara server.
+
+For the Oracle JDK 8 on Ubuntu, issue the following command:
+
+sudo keytool -importcert -file /home/user/example.com.cer -keystore /usr/lib/jvm/java-8-oracle/jre/lib/security/cacerts -alias "Friendly name of your choosing"
+
+Depending on which JRE you have installed, some detective work on the location of the file may be needed.
