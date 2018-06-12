@@ -2,19 +2,40 @@
 
 # Physically installing the Payara/Glassfish server
 
-1. Download the server
+1. Download the server (example version 5.181)
 2. Unzip the server
-3. Move the unzipped server to: /opt/
-4. Add user "payara": sudo adduser payara
-5. Change owner(and group) of payara folder: sudo chown -R payara:payara payara5-181 (Assuming payara5-181 is the folder located in: /opt/)
+3. Rename unzipped folder to: payara5-181 (now its versioned)
+4. Move the renamed folder to: /opt/
+5. Add user "payara": sudo adduser payara
+6. Change owner(and group) of payara folder: sudo chown -R payara:payara payara5-181
 7. Be sure to cd into /opt/
-6. Create a symlink to the installation folder: sudo ln -s /opt/payara5-181 payara5
+8. Create a symlink to the installation folder: sudo ln -s /opt/payara5-181 payara5
 
 Creating the symlink is a very nice way of configureing the server setup. Now your live server is on the /opt/payara5 folder.
 
-When you upgrade to payara 182, you simply unzip it, change owner as described (user is alreadey created). And then make the symlink point at the new installation. Now your systemd configuration works with your new server, without having to edit the configuration.
+Following these instructions should result in two folders looking like this:  
+lrwxrwxrwx  1 root   root     16 Jun 12 22:14 payara5 -> /opt/payara5-181  
+drwxr-xr-x  8 payara payara 4096 Mar 13 10:42 payara5-181
 
-Should there be problems, and you need to revert to the previous version. Just remake the symlink to the server last known good!
+# Upgrading to the next version (example version 5.182)
+
+1. Download the server (example version 5.182)
+2. Unzip the server
+3. Rename unzipped folder to: payara5-182 (Remember we versioned the initial version)
+4. Move the renamed folder to: /opt/
+5: Change owner(and group) of payara folder: sudo chown -R payara:payara payara5-182
+
+Now the server is installed, but a total virgin. We need to move in the configuration and deployments from the old version of the server. So now while upgrading it's a good idea to move things a little around, to better facilitate future upgrades too.
+
+1. From the initial 5.181 installation, copy the folder: /Users/otto/application-servers/payara5/glassfish/domains/production to /opt/production-domain
+2. Change owner of the copied folder: sudo chown -R payara:payara production-domain
+3. Go to the folder /Users/otto/application-servers/payara5/glassfish/domains/ in the new 5.182 installation. 
+4. Move the folder production to production-bak (can also be deleted)
+5. While in the folder in step 3, make a symlink to the folder in step 1 in this section: ln -s /opt/production-domain production
+
+Now the new server is configured to use the production domain from the initial 5.181 installation. And when the new server is started it will be configured, and all previous deployments as on on initial 5.181 server.
+
+When we made the initial 5.181 installation, we also made a symlink payara5 pointing to payara5-181. We should change this to point to the new payara5-182 installation. This will make the new installation the default, as all configruarion and ctartup scripts should point to this symlink, instead of the physical folders.
 
 
 # Systemd, it's really nice to use!!
