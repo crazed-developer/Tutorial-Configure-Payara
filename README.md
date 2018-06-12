@@ -33,6 +33,12 @@ Now the server is installed, but a total virgin. We need to move in the configur
 4. Move the folder production to production-bak (can also be deleted)
 5. While in the folder in step 3, make a symlink to the folder in step 1 in this section: ln -s /opt/production-domain production
 
+Your folder structure should now look like this:  
+lrwxrwxrwx  1 root   root     16 Jun 12 22:14 payara5 -> /opt/payara5-182  
+drwxr-xr-x  8 payara payara 4096 Mar 13 10:42 payara5-181  
+drwxr-xr-x  9 payara payara 4096 Jun  8 10:20 payara5-182  
+drwxr-xr-x 12 payara payara 4096 Jun 12 22:09 production-domain  
+
 Now the new server is configured to use the production domain from the initial 5.181 installation. And when the new server is started it will be configured, and all previous deployments as on on initial 5.181 server.
 
 When we made the initial 5.181 installation, we also made a symlink payara5 pointing to payara5-181. We should change this to point to the new payara5-182 installation. This will make the new installation the default, as all configruarion and ctartup scripts should point to this symlink, instead of the physical folders.
