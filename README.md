@@ -45,7 +45,8 @@ Now the new server is configured to use the production domain from the initial 5
 
 When we made the initial 5.181 installation, we also made a symlink payara5 pointing to payara5-181. We should change this to point to the new payara5-182 installation. This will make the new installation the default, as all configruarion and ctartup scripts should point to this symlink, instead of the physical folders.
 
-```sudo ln -s /opt/payara5-182 payara5
+```
+sudo ln -s /opt/payara5-182 payara5
 ```
 
 # Systemd, it's really nice to use!!
