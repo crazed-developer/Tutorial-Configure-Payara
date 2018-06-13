@@ -15,7 +15,8 @@ Creating the symlink is a very nice way of configureing the server setup. Now yo
 
 Following these instructions should result in two folders looking like this:  
 ```lrwxrwxrwx  1 root   root     16 Jun 12 22:14 payara5 -> /opt/payara5-181  
-drwxr-xr-x  8 payara payara 4096 Mar 13 10:42 payara5-181```
+drwxr-xr-x  8 payara payara 4096 Mar 13 10:42 payara5-181
+```
 
 # Upgrading to the next version (example version 5.182)
 
