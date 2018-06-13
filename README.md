@@ -9,7 +9,7 @@
 5. Add user "payara": sudo adduser payara
 6. Change owner and group of payara folder: ```sudo chown -R payara:payara payara5-181 ```
 7. Be sure to cd into /opt/
-8. Create a symlink to the installation folder: sudo ln -s /opt/payara5-181 payara5
+8. Create a symlink to the installation folder: ```sudo ln -s /opt/payara5-181 payara5 ```
 
 Creating the symlink is a very nice way of configureing the server setup. Now your live server is on the /opt/payara5 folder.
 
@@ -24,15 +24,15 @@ drwxr-xr-x  8 payara payara 4096 Mar 13 10:42 payara5-181
 2. Unzip the server
 3. Rename unzipped folder to: payara5-182 (Remember we versioned the initial version)
 4. Move the renamed folder to: /opt/
-5: Change owner(and group) of payara folder: sudo chown -R payara:payara payara5-182
+5: Change owner(and group) of payara folder: ```sudo chown -R payara:payara payara5-182 ```
 
 Now the server is installed, but a total virgin. We need to move in the configuration and deployments from the old version of the server. So now while upgrading it's a good idea to move things a little around, to better facilitate future upgrades too.
 
 1. From the initial 5.181 installation, copy the folder: /Users/otto/application-servers/payara5/glassfish/domains/production to /opt/production-domain
-2. Change owner of the copied folder: sudo chown -R payara:payara production-domain
+2. Change owner of the copied folder: ```sudo chown -R payara:payara production-domain ```
 3. Go to the folder /Users/otto/application-servers/payara5/glassfish/domains/ in the new 5.182 installation. 
 4. Move the folder production to production-bak (can also be deleted)
-5. While in the folder in step 3, make a symlink to the folder in step 1 in this section: ln -s /opt/production-domain production
+5. While in the folder in step 3, make a symlink to the folder in step 1 in this section: ```ln -s /opt/production-domain production ```
 
 Your folder structure should now look like this:  
 ```lrwxrwxrwx  1 root   root     16 Jun 12 22:14 payara5 -> /opt/payara5-182  
