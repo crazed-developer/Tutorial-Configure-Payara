@@ -6,7 +6,7 @@
 2. Unzip the server
 3. Rename unzipped folder to: payara5-181 (now its versioned)
 4. Move the renamed folder to: /opt/
-5. Add user "payara" ti linux: sudo adduser payara
+5. Add user "payara" to linux: sudo adduser payara
 6. Change owner and group of payara folder: ```sudo chown -R payara:payara payara5-181 ```
 7. Be sure to cd into /opt/
 8. Create a symlink to the installation folder: ```sudo ln -s /opt/payara5-181 payara5 ```
