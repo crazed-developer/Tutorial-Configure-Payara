@@ -25,6 +25,7 @@ drwxr-xr-x  8 payara payara 4096 Mar 13 10:42 payara5-181
 2. Unzip the server
 3. Rename unzipped folder to: payara5-182 (Remember we versioned the initial version)
 4. Move the renamed folder to: /opt/
+
 5: Change owner(and group) of payara folder: ```sudo chown -R payara:payara payara5-182 ```
 
 Now the server is installed, but a total virgin. We need to move in the configuration and deployments from the old version of the server. So now while upgrading it's a good idea to move things a little around, to better facilitate future upgrades too.
