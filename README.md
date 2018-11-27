@@ -21,7 +21,7 @@ drwxr-xr-x  8 payara payara 4096 Mar 13 10:42 payara5-181
 
 # Upgrading to the next version (example version 5.182)
 
-1. Download the server (example version 5.182)
+1. Download the updated server (example version 5.182)
 2. Unzip the server
 3. Rename unzipped folder to: payara5-182 (Remember we versioned the initial version)
 4. Move the renamed folder to: /opt/
