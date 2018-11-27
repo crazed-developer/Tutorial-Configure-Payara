@@ -84,3 +84,11 @@ For the Oracle JDK 8 on Ubuntu, issue the following command:
 sudo keytool -importcert -file /home/user/example.com.cer -keystore /usr/lib/jvm/java-8-oracle/jre/lib/security/cacerts -alias "Friendly name of your choosing"
 
 Depending on which JRE you have installed, some detective work on the location of the file may be needed.
+
+# Adding a JDBC driver to the installation.
+This example shows MySQL probably other databases will be just as easy. The MySQL driver is downloaded from https://dev.mysql.com/downloads/connector/j/ (I use the 5.1 line of drivers). When downloaded unzip the file. Inside you will find the driver files: mysql-connector-java-5.1.47-bin.jar and also a file without the bin in the filename. Choose either one, as they are identical. Only difference is the filename for better maven compatibility (for some reason).
+
+Once the file is identified, copy it to this location: glassfish/domains/[your domain]/lib (Where default domain can be either production or domain1)
+
+
+
