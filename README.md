@@ -90,5 +90,9 @@ This example shows MySQL probably other databases will be just as easy. The MySQ
 
 Once the file is identified, copy it to this location: glassfish/domains/[your domain]/lib (Where default domain can be either production or domain1)
 
+# Configureing the JDK the server will run on
+Open the following file: glassfish/config/asenv.conf
 
+And add the following line: AS_JAVA="/Library/Java/JavaVirtualMachines/jdk8u192-b12/Contents/home"
 
+Of course pointing to the JDR in question (Here adobtopenjdk 8u191-b2)
