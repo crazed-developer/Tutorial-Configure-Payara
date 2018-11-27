@@ -52,6 +52,8 @@ When we made the initial 5.181 installation, we also made a symlink payara5 poin
 sudo ln -s /opt/payara5-182 payara5
 ```
 
+NB: This upgrade method works great, except sometimes certificates in the keystore expires. Not sure if there can be other cases non optimal behaviour. The method is explained by Payara here: https://blog.payara.fish/how-to-upgrade-payara-server
+
 # Systemd, it's really nice to use!!
 Setup the server as a systemd service.
 
